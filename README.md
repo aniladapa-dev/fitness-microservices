@@ -1,4 +1,4 @@
-                             Fitness AI Application
+                                            Fitness AI Application
 
 A distributed, production-style fitness tracking platform built using a microservices architecture.
 
