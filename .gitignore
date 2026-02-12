@@ -1,0 +1,36 @@
+# =============================
+# IntelliJ / IDE
+# =============================
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# =============================
+# Java / Spring Boot
+# =============================
+target/
+*.log
+
+# =============================
+# Node / Frontend
+# =============================
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# =============================
+# Environment Files
+# =============================
+.env
+
+# =============================
+# npm / yarn logs
+# =============================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+

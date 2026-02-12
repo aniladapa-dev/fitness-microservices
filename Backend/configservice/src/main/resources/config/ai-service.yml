@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: ai-service
+
+  data:
+    mongodb:
+      uri: ${AI_MONGO_URI}
+      database: ${AI_MONGO_DATABASE}
+
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+
+    listener:
+      simple:
+        default-requeue-rejected: false
+
+server:
+  port: ${AI_SERVICE_PORT}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL}
+
+rabbitmq:
+  exchange:
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking
+
+groq:
+  api:
+    key: ${GROQ_API_KEY}
+
+
+

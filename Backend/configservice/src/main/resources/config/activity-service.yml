@@ -1,0 +1,27 @@
+spring:
+  data:
+    mongodb:
+      uri: ${ACTIVITY_MONGO_URI}
+      database: ${ACTIVITY_MONGO_DATABASE}
+
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+
+server:
+  port: ${ACTIVITY_SERVICE_PORT}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL}
+
+rabbitmq:
+  exchange:
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking
