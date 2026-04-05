@@ -11,6 +11,11 @@ import reactor.core.publisher.Mono;
 @Service
 @RequiredArgsConstructor
 @Slf4j
+/**
+ * Internal UserService client within the API Gateway.
+ * - Makes WebClient calls to the USER-SERVICE to check if a user is already recorded.
+ * - Triggers backend user registration if the incoming JWT reveals a new Keycloak User.
+ */
 public class UserService {
 
     private final WebClient userServiceWebClient;

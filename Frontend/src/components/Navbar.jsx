@@ -64,31 +64,14 @@ const Navbar = () => {
           )}
 
           {!token ? (
-              <>
-                <Button color="inherit" onClick={handleLogin}>
-                  Login
-                </Button>
-
-                <Button
-                  color="inherit"
-                  onClick={() =>
-                    window.location.href =
-                      "http://localhost:8181/realms/fitness-oauth2/protocol/openid-connect/auth" +
-                      "?response_type=code" +
-                      "&client_id=oauth2-pkce-client" +
-                      "&redirect_uri=http://localhost:5173" +
-                      "&scope=openid profile email" +
-                      "&kc_action=register"
-                  }
-                >
-                  Sign Up
-                </Button>
-              </>
-            ) : (
-              <Button color="inherit" onClick={handleLogout}>
-                Logout
-              </Button>
-            )}
+            <Button color="inherit" onClick={handleLogin}>
+              Login
+            </Button>
+          ) : (
+            <Button color="inherit" onClick={handleLogout}>
+              Logout
+            </Button>
+          )}
 
 
           {/* Theme toggle stays INLINE */}

@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
+/**
+ * REST Controller for managing user-related operations.
+ * - Handles internal synchronization of users from Keycloak.
+ * - Provides endpoints to fetch user profiles by their Keycloak ID.
+ * - Exposes an endpoint to validate whether a user exists.
+ */
 public class UserController {
 
     private final UserService userService;

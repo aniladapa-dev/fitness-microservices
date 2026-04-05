@@ -10,6 +10,12 @@ import java.util.Map;
 
 @Service
 @Slf4j
+/**
+ * WebClient integration service for the Groq AI API.
+ * - Configures authorization tokens and API URLs.
+ * - Sends prompt details to the 'llama-3.1-8b-instant' model.
+ * - Blocks and returns the AI's string response.
+ */
 public class GroqService {
 
     private final WebClient webClient;

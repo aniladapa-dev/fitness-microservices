@@ -16,6 +16,13 @@ import reactor.core.publisher.Mono;
 @Component
 @Slf4j
 @RequiredArgsConstructor
+/**
+ * Global WebFilter for intercepting requests to perform User synchronization from Keycloak.
+ * - Extracts Keycloak Identity information from incoming Bearer JWTs.
+ * - Validates locally if the user exists.
+ * - Onboards (registers) the user synchronously into the backend database if they do not exist.
+ * - Adds the X-USER-ID header downstream for backend services to consume.
+ */
 public class KeycloakSyncFilter implements WebFilter {
 
     private final UserService userService;

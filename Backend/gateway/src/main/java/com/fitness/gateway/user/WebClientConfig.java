@@ -6,6 +6,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
+/**
+ * Configuration class initializing LoadBalanced WebClients.
+ * - Allows the Gateway to communicate internally with microservices via their Eureka service names.
+ */
 public class WebClientConfig {
 
     @Bean

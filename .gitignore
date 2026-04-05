@@ -11,6 +11,8 @@
 # =============================
 target/
 *.log
+.mvn/wrapper/maven-wrapper.jar
+**/*.class
 
 # =============================
 # Node / Frontend
@@ -19,11 +21,16 @@ node_modules/
 dist/
 dist-ssr/
 *.local
+.eslintcache
 
 # =============================
 # Environment Files
 # =============================
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # =============================
 # npm / yarn logs
@@ -33,4 +40,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+
+# =============================
+# Database / Docker
+# =============================
+postgres-data/
+mongo-data/
+keycloak-data/
 

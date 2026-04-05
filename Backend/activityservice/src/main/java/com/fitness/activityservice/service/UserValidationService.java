@@ -10,6 +10,12 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 @Service
 @RequiredArgsConstructor
 @Slf4j
+/**
+ * WebClient service for validating users against User Service.
+ * - Prevents orphan activities by ensuring only valid users can log data.
+ * - Calls the external validate API securely.
+ * - Handles HTTP status codes gracefully (e.g. 404 NOT FOUND, 400 BAD REQUEST).
+ */
 public class UserValidationService {
 
     private final WebClient userServiceWebClient;

@@ -15,10 +15,19 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
+import com.fitness.activityservice.util.CalorieConstants;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
+/**
+ * Business logic service handling fitness activities.
+ * - Validates users via UserValidationService before logging an activity.
+ * - Persists activity logs into MongoDB.
+ * - Publishes new activities to RabbitMQ for asynchronous AI processing.
+ * - Calls the User Service (silently) to auto-complete related daily targets.
+ * - Computes and returns user's daily/historical activity records.
+ */
 public class ActivityService {
 
     private final ActivityRepository activityRepository;
@@ -40,11 +49,21 @@ public class ActivityService {
             throw new RuntimeException("Invalid User : " + keycloakId);
         }
 
+        // Hybrid Calories logic: Use provided value or calculate if missing (0 or null)
+        Integer userProvided = request.getCaloriesBurned();
+        Double weight = (request.getWeight() != null && request.getWeight() > 0) ? request.getWeight() : 70.0; 
+        int calculated = CalorieConstants.calculateCalories(request.getType(), request.getDuration(), weight);
+
+        int finalCalories = (userProvided != null && userProvided > 0) ? userProvided : calculated;
+
         Activity activity = Activity.builder()
                 .userId(keycloakId)
                 .type(request.getType())
                 .duration(request.getDuration())
-                .caloriesBurned(request.getCaloriesBurned())
+                .caloriesBurned(finalCalories)
+                .userProvidedCalories(userProvided)
+                .calculatedCalories(calculated)
+                .weight(weight)
                 .start(request.getStartTime())
                 .additionalMetrics(request.getAdditionalMetrics())
                 .build();

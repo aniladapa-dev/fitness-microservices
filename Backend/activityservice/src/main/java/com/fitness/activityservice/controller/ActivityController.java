@@ -14,6 +14,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/activities")
 @AllArgsConstructor
+/**
+ * REST Controller for managing fitness activities.
+ * - Exposes endpoints to track new activities.
+ * - Retrieves a user's entire activity history.
+ * - Retrieves specific activities by ID.
+ * - Retrieves activities logged for the current day.
+ * - Supports deleting activities.
+ */
 public class ActivityController {
 
     private ActivityService activityService;

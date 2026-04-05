@@ -2,6 +2,7 @@ volumes:
   postgres-data:
   mongo-data:
   rabbitmq-data:
+  keycloak-data:
 
 services:
 
@@ -161,6 +162,20 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: admin
     ports:
       - "8081:8080"
+    networks:
+      - fitness-network
+    volumes:
+      - keycloak-data:/opt/keycloak/data
+    depends_on:
+      - postgres
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: mailhog
+    restart: unless-stopped
+    ports:
+      - "8025:8025"   # Web Dashboard
+      - "1025:1025"   # SMTP Port
     networks:
       - fitness-network
 

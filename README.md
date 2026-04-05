@@ -150,22 +150,47 @@ Core Features:
 
 
 AI Workflow:
-
     * User logs an activity
-
     * Activity Service validates user
-
     * Activity is saved in MongoDB
-
     * Activity event is published to RabbitMQ 
-
     * AI Service consumes the event
-
     * AI Service generates recommendation
-
     * Recommendation is stored in MongoDB
-
     * Frontend fetches and displays recommendation
+
+# How to Run
+
+### 1. Prerequisite
+Ensure you have the following ready:
+- Keycloak Client Secret
+- Groq API Key (for AI insights)
+
+### 2. Run with Docker
+The entire infrastructure (PostgreSQL, MongoDB, Keycloak, Mailhog, and backend microservices) can be started using Docker Compose from the root directory:
+```bash
+docker compose up -d --build
+```
+
+### 3. Key Infrastructure Access
+- **API Gateway (Central Entry)**: [http://localhost:8080](http://localhost:8080)
+- **Frontend App**: [http://localhost:5173](http://localhost:5173)
+- **Keycloak Admin Console**: [http://localhost:8081/admin](http://localhost:8081/admin) (admin/admin)
+- **Mailhog Dashboard (Email Testing)**: [http://localhost:8025](http://localhost:8025)
+
+---
+
+# New Features & Enhancements
+
+### Hybrid Calorie Calculation
+The platform now supports automated calorie estimation based on the **MET (Metabolic Equivalent of Task)** formula:
+- **Formula**: `Calories = MET × weight (kg) × (duration / 60)`
+- **Manual Override**: Users can still provide their own calorie burn data manually.
+- **Auto-Calculation**: If the calorie field is left blank, the system estimates the burn based on activity type, user weight, and duration.
+
+### Persistence & Email Testing
+- **Data Persistence**: All service databases and Keycloak configurations are stored in named Docker volumes (`postgres-data`, `mongo-data`, `keycloak-data`), ensuring data survives container restarts.
+- **Local Mail Testing**: Integrated **Mailhog** allows for testing user registration and email verification flows without needing a real SMTP server. All outgoing "user verification" emails can be viewed in the Mailhog dashboard at [http://localhost:8025](http://localhost:8025).
 
 
 

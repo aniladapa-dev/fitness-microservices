@@ -27,6 +27,13 @@ import java.time.LocalDateTime;
         }
 )
 @Data
+/**
+ * JPA Entity representing a Daily Target for a user.
+ * - Maps to the "daily_targets" table in the database.
+ * - Links to a specific User via a ManyToOne relationship.
+ * - Stores target metrics like activity type, date, label, and completion status.
+ * - Enforces uniqueness across user, target date, and label.
+ */
 public class DailyTarget {
 
     @Id

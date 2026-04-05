@@ -20,8 +20,9 @@ root.render(
     <Router>
       <AuthProvider
         authConfig={authConfig}
-        autoLogin={true}
-        autoRefresh={true}
+        autoLogin={false}
+        autoRefresh={false}
+        onRefreshTokenExpire={() => console.log("Refresh token expired - redirect suppressed.")}
         refreshTimeBeforeExpiry={30}
         loadingComponent={<div>Loading...</div>}
       >

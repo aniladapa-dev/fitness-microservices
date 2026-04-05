@@ -14,6 +14,13 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+/**
+ * Business logic service for managing Daily Targets.
+ * - Creates, retrieves, and updates daily fitness targets for a user.
+ * - Manages the auto-completion of targets when activities are logged.
+ * - Automatically purges expired targets (prior to today) upon retrieval.
+ * - Enforces business rules surrounding target ownership and existence.
+ */
 public class DailyTargetService {
 
     private final DailyTargetRepository repository;

@@ -10,6 +10,12 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "users")
 @Data
+/**
+ * JPA Entity representing a User in the system.
+ * - Stores essential user information like name and email.
+ * - Maintains the Keycloak ID as the unique identifier for authentication.
+ * - Keeps track of user roles and timestamp fields (created/updated).
+ */
 public class User {
 
     @Id

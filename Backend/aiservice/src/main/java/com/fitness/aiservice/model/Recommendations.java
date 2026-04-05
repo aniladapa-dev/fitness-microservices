@@ -16,6 +16,13 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * MongoDB Document representing AI-generated workout recommendations.
+ * - Maps to the "recommendations" collection.
+ * - Links specifically to an activity and user.
+ * - Encapsulates detailed nested objects for analysis, diet, improvements, and safety.
+ * - Contains a confidence score to reflect AI certainty vs fallback usage.
+ */
 public class Recommendations {
 
     @Id

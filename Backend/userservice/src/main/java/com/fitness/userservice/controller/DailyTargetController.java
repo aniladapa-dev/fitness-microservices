@@ -11,6 +11,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/users/{userId}/daily-targets")
 @RequiredArgsConstructor
+/**
+ * REST Controller for managing daily targets for a user.
+ * - Allows fetching a user's targets for the current day.
+ * - Provides functionality to add new daily targets.
+ * - Enables toggling the completion status of a specific target.
+ * - Supports resetting/deleting all targets for today.
+ * - Allows deleting a specific target by its ID.
+ */
 public class DailyTargetController {
 
     private final DailyTargetService service;

@@ -24,6 +24,7 @@ const ActivityForm = ({ onActivityAdded }) => {
     type: "RUNNING",
     duration: "",
     caloriesBurned: "",
+    weight: "",
     startTime: "",
     additionalMetrics: {
       distance: "",
@@ -58,7 +59,8 @@ const ActivityForm = ({ onActivityAdded }) => {
     const payload = {
       type: activity.type,
       duration: Number(activity.duration),
-      caloriesBurned: Number(activity.caloriesBurned),
+      caloriesBurned: activity.caloriesBurned ? Number(activity.caloriesBurned) : null,
+      weight: Number(activity.weight),
       startTime: activity.startTime,
       additionalMetrics: {
         distance: Number(activity.additionalMetrics.distance),
@@ -75,6 +77,7 @@ const ActivityForm = ({ onActivityAdded }) => {
         type: "RUNNING",
         duration: "",
         caloriesBurned: "",
+        weight: "",
         startTime: "",
         additionalMetrics: {
           distance: "",
@@ -122,6 +125,18 @@ const ActivityForm = ({ onActivityAdded }) => {
         onChange={(e) => handleChange("duration", e.target.value)}
       />
 
+      {/* Weight */}
+      <TextField
+        fullWidth
+        required
+        label="Weight (kg)"
+        type="number"
+        sx={{ mb: 2 }}
+        value={activity.weight}
+        onChange={(e) => handleChange("weight", e.target.value)}
+        helperText="Required for calorie estimation if calories are not provided."
+      />
+
       {/* Calories */}
       <TextField
         fullWidth
@@ -130,6 +145,7 @@ const ActivityForm = ({ onActivityAdded }) => {
         sx={{ mb: 2 }}
         value={activity.caloriesBurned}
         onChange={(e) => handleChange("caloriesBurned", e.target.value)}
+        helperText="Leave blank to auto-calculate based on weight and duration."
       />
 
       {/* Start Time */}

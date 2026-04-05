@@ -18,6 +18,14 @@ import java.util.List;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+/**
+ * Core AI processing service for generating and managing workout recommendations.
+ * - Constructs prompt payloads based on logged activities.
+ * - Calls the external Groq (LLM) API asynchronously via RabbitMQ events.
+ * - Parses JSON responses from the AI into structured Recommendation entities.
+ * - Provides fallback logic to generate static, default recommendations if AI fails.
+ * - Saves generated structured data into MongoDB.
+ */
 public class ActivityAiService {
 
     private final GroqService groqService;

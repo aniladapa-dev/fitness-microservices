@@ -6,13 +6,6 @@ import FeatureCard from "../components/FeatureCard";
 const LoggedOutHome = () => {
   const { logIn } = useContext(AuthContext);
 
-  const signupUrl =
-  "http://localhost:8181/realms/fitness-oauth2/protocol/openid-connect/auth" +
-  "?response_type=code" +
-  "&client_id=oauth2-pkce-client" +
-  "&redirect_uri=http://localhost:5173" +
-  "&scope=openid profile email" +
-  "&kc_action=register";
 
 
   return (
@@ -85,19 +78,10 @@ const LoggedOutHome = () => {
         <Button
           variant="contained"
           size="large"
-          sx={{ px: 6, mr: 2 }}
+          sx={{ px: 6 }}
           onClick={() => logIn()}
         >
           Login
-        </Button>
-
-        <Button
-          variant="outlined"
-          size="large"
-          sx={{ px: 6 }}
-          onClick={() => (window.location.href = signupUrl)}
-        >
-          Sign Up
         </Button>
       </Box>
 

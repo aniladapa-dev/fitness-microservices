@@ -15,6 +15,12 @@ import java.util.List;
 
 @Configuration
 @EnableWebFluxSecurity
+/**
+ * Reactive Security Configuration for the API Gateway.
+ * - Enforces authentication on all routes (except actuator endpoints).
+ * - Configures Spring Security to act as an OAuth2 Resource Server handling JWTs.
+ * - Enables strict Cross-Origin Resource Sharing (CORS) mapped to the frontend URL.
+ */
 public class SecurityConfig {
 
     @Bean

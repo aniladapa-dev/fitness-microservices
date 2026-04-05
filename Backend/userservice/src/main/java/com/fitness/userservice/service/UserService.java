@@ -13,6 +13,13 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+/**
+ * Business logic service for managing Users.
+ * - Handles syncing user data from Keycloak to the local database.
+ * - Fetches user profiles based on Keycloak ID.
+ * - Provides boolean validation checks for user existence.
+ * - Converts User entities into UserResponse DTOs.
+ */
 public class UserService {
 
     private final UserRepository userRepository;

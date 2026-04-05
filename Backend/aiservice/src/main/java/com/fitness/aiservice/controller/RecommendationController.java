@@ -11,6 +11,12 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/recommendations")
+/**
+ * REST Controller for serving AI-generated recommendations.
+ * - Retrieves all fitness recommendations for a given user.
+ * - Retrieves a specific recommendation by the activity ID.
+ * - Deletes a recommendation internally when the related activity is deleted.
+ */
 public class RecommendationController {
 
     private final RecommendationService recommendationService;

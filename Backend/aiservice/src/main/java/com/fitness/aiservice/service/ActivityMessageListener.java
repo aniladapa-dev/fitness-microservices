@@ -13,6 +13,12 @@ import java.io.IOException;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+/**
+ * RabbitMQ Listener for processing asynchronous activity events.
+ * - Consumes new workout events from the "activity.queue".
+ * - Delegates the heavy lifting of AI recommendation generation to ActivityAiService.
+ * - Handles errors gracefully by triggering fallback recommendations.
+ */
 public class ActivityMessageListener {
 
     private final ActivityAiService activityAiService;

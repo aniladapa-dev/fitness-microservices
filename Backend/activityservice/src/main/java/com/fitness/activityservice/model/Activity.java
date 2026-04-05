@@ -16,6 +16,13 @@ import java.util.Map;
 @Data
 @Builder
 @AllArgsConstructor
+/**
+ * MongoDB Document representing a physical fitness activity.
+ * - Stored in the "activities" collection.
+ * - Captures metadata: user ID, activity type, duration, and calories.
+ * - Supports dynamic/unstructured "additional metrics" via a Map.
+ * - Utilizes Spring Data audit fields for created and updated timestamps.
+ */
 public class Activity {
 
     @Id
@@ -24,6 +31,12 @@ public class Activity {
     private ActivityType type;
     private Integer duration;
     private Integer caloriesBurned;
+    
+    // New fields for Hybrid Calorie Calculation
+    private Double weight;
+    private Integer userProvidedCalories;
+    private Integer calculatedCalories;
+
     private LocalDateTime start;
 
     @Field("metrics")
