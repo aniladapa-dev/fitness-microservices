@@ -163,34 +163,34 @@ AI Workflow:
 
 <p align="center">
   <img src="screenshots/IMG_20260405_181715.png" width="800" alt="Home Page"/>
-  <br><i>1. Home Page before Login / Welcome Screen</i><br><br>
+  <br><i>1.  Landing Page / Welcome Screen</i><br><br>
   
   <img src="screenshots/IMG_20260405_181822.png" width="800" alt="Login Page"/>
-  <br><i>2. continue..</i><br><br>
+  <br><i>2. Key Features and Services Overview</i><br><br>
   
   <img src="screenshots/IMG_20260405_182046.png" width="800" alt="Registration"/>
-  <br><i>3. Home Page after Login</i><br><br>
+  <br><i>3.  User Dashboard (Authenticated View</i><br><br>
 
   <img src="screenshots/IMG_20260405_182153.png" width="800" alt="Keycloak Admin"/>
-  <br><i>4. Add Activity Page</i><br><br>
+  <br><i>4. Activity Logging Form</i><br><br>
 
   <img src="screenshots/IMG_20260405_182215.png" width="800" alt="Mailhog"/>
-  <br><i>5. Continue..</i><br><br>
+  <br><i>5. Additional Fitness Metrics (Heart Rate, Speed)</i><br><br>
 
   <img src="screenshots/IMG_20260405_182233.png" width="800" alt="Activity Registration"/>
-  <br><i>6. Activities Page</i><br><br>
+  <br><i>6. Activity History and Progress Tracking</i><br><br>
 
   <img src="screenshots/IMG_20260405_182247.png" width="800" alt="Dashboard"/>
-  <br><i>7. Ai Recommendations Page</i><br><br>
+  <br><i>7. AI-Generated Fitness Recommendations</i><br><br>
 
   <img src="screenshots/IMG_20260405_182259.png" width="800" alt="Activity History"/>
-  <br><i>8.Recommendation of a Specific Activity</i><br><br>
+  <br><i>8. Deep-Dive AI Analysis for Specific Workouts</i><br><br>
 
   <img src="screenshots/IMG_20260405_182260.png" width="800" alt="AI Recommendations"/>
-  <br><i>9. Continue..</i><br><br>
+  <br><i>9. Personalized Improvement Suggestions </i><br><br>
 
   <img src="screenshots/IMG_20260405_182261.png" width="800" alt="Mobile View"/>
-  <br><i>10. Continue..</i><br><br>
+  <br><i>10. Responsive Design for Mobile Devices </i><br><br>
 </p>
 
 ---
