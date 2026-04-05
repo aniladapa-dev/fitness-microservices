@@ -159,6 +159,42 @@ AI Workflow:
     * Recommendation is stored in MongoDB
     * Frontend fetches and displays recommendation
 
+# Screenshots
+
+<p align="center">
+  <img src="screenshots/IMG_20260405_181715.png" width="800" alt="Home Page"/>
+  <br><i>1. Landing Page / Welcome Screen</i><br><br>
+  
+  <img src="screenshots/IMG_20260405_181822.png" width="800" alt="Login Page"/>
+  <br><i>2. Login / Authentication Screen</i><br><br>
+  
+  <img src="screenshots/IMG_20260405_182046.png" width="800" alt="Registration"/>
+  <br><i>3. User Registration Flow</i><br><br>
+
+  <img src="screenshots/IMG_20260405_182153.png" width="800" alt="Keycloak Admin"/>
+  <br><i>4. Keycloak Identity Management Console</i><br><br>
+
+  <img src="screenshots/IMG_20260405_182215.png" width="800" alt="Mailhog"/>
+  <br><i>5. Mailhog - Captured Local Emails</i><br><br>
+
+  <img src="screenshots/IMG_20260405_182233.png" width="800" alt="Activity Registration"/>
+  <br><i>6. Activity Log Submission (with Hybrid Calorie Estimation)</i><br><br>
+
+  <img src="screenshots/IMG_20260405_182247.png" width="800" alt="Dashboard"/>
+  <br><i>7. User Dashboard - Performance Overview</i><br><br>
+
+  <img src="screenshots/IMG_20260405_182259.png" width="800" alt="Activity History"/>
+  <br><i>8. Activity History and Progress Tracking</i><br><br>
+
+  <img src="screenshots/IMG_20260405_182260.png" width="800" alt="AI Recommendations"/>
+  <br><i>9. AI-Powered Personal Fitness Insights</i><br><br>
+
+  <img src="screenshots/IMG_20260405_182261.png" width="800" alt="Mobile View"/>
+  <br><i>10. Responsive UI / Final State</i><br><br>
+</p>
+
+---
+
 # How to Run
 
 ### 1. Prerequisite
